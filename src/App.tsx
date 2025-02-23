@@ -1,17 +1,17 @@
 import { useState } from "react";
 import Home from "./features/Home";
-import About from "./features/about";
-import Hobies from "./features/hobies";
-import Contact from "./features/contact";
+import { Navigation } from "./components/Navigation";
+import About from "./features/About";
+import Hobbies from "./features/Hobbies";
+import contact from "./features/Contact";
 
 const sections = [
-  { title: "Home", backgroundColor: "bg-stone-200", Component: Home },
+  { title: "Home", backgroundColor: "bg-rose-50", Component: Home },
   { title: "About Me", backgroundColor: "bg-sky-50", Component: About },
-  { title: "Hobbies", backgroundColor: "bg-indigo-50", Component: Hobies },
-  { title: "Contact", backgroundColor: "bg-emerald-50", Component: Contact },
+  { title: "Hobbies", backgroundColor: "bg-indigo-50", Component: Hobbies },
+  { title: "Contact", backgroundColor: "bg-emerald-50", Component: contact },
 ];
 
-/* eslint-disable @typescript-eslint/no-unused-vars */
 function App() {
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -19,19 +19,11 @@ function App() {
     <div className="h-screen flex flex-col bg-gray-50">
       <header className="grid grid-cols-4 items-center h-16 bg-stone-700 p-4">
         <div className="col-span-1 hidden sm:block"></div>
-        <div className="col-span-4 sm:col-span-2 px-4 flex justify-between">
-          {sections.map((section, index) => (
-            <button
-              key={index}
-              onClick={() => setActiveIndex(index)}
-              className={`py-2 font-medium ${
-                activeIndex === index ? "text-gray-50" : "text-gray-400"
-              }`}
-            >
-              {section.title}
-            </button>
-          ))}
-        </div>
+        <Navigation
+          sections={sections}
+          activeIndex={activeIndex}
+          setActiveIndex={setActiveIndex}
+        />
         <div className="col-span-1 hidden sm:block"></div>
       </header>
       <main className="flex-1 relative overflow-hidden">
