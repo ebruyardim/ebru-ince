@@ -1,9 +1,9 @@
-import { useState } from "react";
+// import { useState } from "react";
 import Home from "./features/Home";
-import { Navigation } from "./components/Navigation";
 import About from "./features/About";
 import Hobbies from "./features/Hobbies";
 import contact from "./features/Contact";
+import Navigation from "./components/Navigation";
 
 const sections = [
   { title: "Home", backgroundColor: "bg-rose-50", Component: Home },
@@ -13,23 +13,19 @@ const sections = [
 ];
 
 function App() {
-  const [activeIndex, setActiveIndex] = useState(0);
+  // const [activeIndex, setActiveIndex] = useState(0);
 
   return (
     <div className="h-screen flex flex-col bg-gray-50">
       <header className="grid grid-cols-4 items-center h-16 bg-stone-700 p-4">
         <div className="col-span-1 hidden sm:block"></div>
-        <Navigation
-          sections={sections}
-          activeIndex={activeIndex}
-          setActiveIndex={setActiveIndex}
-        />
+        <Navigation />
         <div className="col-span-1 hidden sm:block"></div>
       </header>
       <main className="flex-1 relative overflow-hidden">
         <div
           className={`flex w-full h-full transition-transform duration-500 ease-in-out`}
-          style={{ transform: `translateX(-${activeIndex * 100}%)` }}
+          // style={{ transform: `translateX(-${activeIndex * 100}%)` }}
         >
           {sections.map((section) => (
             <div
