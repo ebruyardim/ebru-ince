@@ -1,10 +1,11 @@
+import type React from "react";
+
 import { useState, useEffect } from "react";
 import { Menu } from "lucide-react";
-import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Button } from "./ui/button";
+import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 
-export default function Navigation() {
+export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -45,49 +46,51 @@ export default function Navigation() {
     >
       <div className="container flex h-16 items-center justify-between">
         <div className="flex items-center gap-2">
-          <Link to="/" className="text-xl font-bold">
-            Portfolio
-          </Link>
+          <a href="/" className="group relative">
+            <div className="flex items-baseline">
+              <span className="text-xl font-bold">
+                <span className="text-primary">Ebru</span>
+                <span className="relative inline-block">
+                  <span className="relative z-10">İnce</span>
+                  <span className="absolute -bottom-1 left-0 w-full h-2 bg-primary/20 rounded-full transform origin-left transition-transform duration-300 group-hover:scale-x-110"></span>
+                </span>
+              </span>
+              <div className="w-1.5 h-1.5 rounded-full bg-primary ml-1.5 animate-pulse"></div>
+            </div>
+            <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></div>
+          </a>
         </div>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-6">
-          <Link
-            to="#home"
-            onClick={(e: React.MouseEvent<HTMLAnchorElement>) =>
-              handleScroll(e, "home")
-            }
+          <a
+            href="#home"
+            onClick={(e) => handleScroll(e, "home")}
             className="text-sm font-medium hover:text-primary transition-colors"
           >
             Home
-          </Link>
-          <Link
-            to="#about"
-            onClick={(e: React.MouseEvent<HTMLAnchorElement>) =>
-              handleScroll(e, "about")
-            }
+          </a>
+          <a
+            href="#about"
+            onClick={(e) => handleScroll(e, "about")}
             className="text-sm font-medium hover:text-primary transition-colors"
           >
             About Me
-          </Link>
-          <Link
-            to="#projects"
-            onClick={(e: React.MouseEvent<HTMLAnchorElement>) =>
-              handleScroll(e, "projects")
-            }
+          </a>
+          {/* <a
+            href="#projects"
+            onClick={(e) => handleScroll(e, "projects")}
             className="text-sm font-medium hover:text-primary transition-colors"
           >
             Projects
-          </Link>
-          <Link
-            to="#contact"
-            onClick={(e: React.MouseEvent<HTMLAnchorElement>) =>
-              handleScroll(e, "contact")
-            }
+          </a> */}
+          <a
+            href="#contact"
+            onClick={(e) => handleScroll(e, "contact")}
             className="text-sm font-medium hover:text-primary transition-colors"
           >
             Contact
-          </Link>
+          </a>
         </nav>
 
         {/* Mobile Navigation */}
@@ -100,42 +103,34 @@ export default function Navigation() {
           </SheetTrigger>
           <SheetContent side="right">
             <nav className="flex flex-col gap-4 mt-8">
-              <Link
-                to="#home"
-                onClick={(e: React.MouseEvent<HTMLAnchorElement>) =>
-                  handleScroll(e, "home")
-                }
+              <a
+                href="#home"
+                onClick={(e) => handleScroll(e, "home")}
                 className="text-lg font-medium hover:text-primary transition-colors"
               >
                 Home
-              </Link>
-              <Link
-                to="#about"
-                onClick={(e: React.MouseEvent<HTMLAnchorElement>) =>
-                  handleScroll(e, "about")
-                }
+              </a>
+              <a
+                href="#about"
+                onClick={(e) => handleScroll(e, "about")}
                 className="text-lg font-medium hover:text-primary transition-colors"
               >
                 About Me
-              </Link>
-              <Link
-                to="#projects"
-                onClick={(e: React.MouseEvent<HTMLAnchorElement>) =>
-                  handleScroll(e, "projects")
-                }
+              </a>
+              <a
+                href="#projects"
+                onClick={(e) => handleScroll(e, "projects")}
                 className="text-lg font-medium hover:text-primary transition-colors"
               >
                 Projects
-              </Link>
-              <Link
-                to="#contact"
-                onClick={(e: React.MouseEvent<HTMLAnchorElement>) =>
-                  handleScroll(e, "contact")
-                }
+              </a>
+              <a
+                href="#contact"
+                onClick={(e) => handleScroll(e, "contact")}
                 className="text-lg font-medium hover:text-primary transition-colors"
               >
                 Contact
-              </Link>
+              </a>
             </nav>
           </SheetContent>
         </Sheet>
