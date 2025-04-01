@@ -3,6 +3,7 @@ import react from "@vitejs/plugin-react";
 import path from "path";
 
 export default defineConfig({
+  base: "/ebru-ince/", // GitHub Pages için alt dizin
   plugins: [
     react({
       include: "**/*.tsx",
