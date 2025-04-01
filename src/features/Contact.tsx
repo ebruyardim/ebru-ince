@@ -13,7 +13,7 @@ export default function ContactSection() {
       <div className="container max-w-3xl">
         <div className="flex flex-col gap-2 text-center mb-8">
           <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl">
-            Get In Touch with me
+            Get In Touch
           </h2>
           <p className="mx-auto max-w-[500px] text-muted-foreground text-sm">
             Have a project in mind or want to chat? Connect with me through
