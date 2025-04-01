@@ -1,5 +1,4 @@
 name: Deploy to GitHub Pages
-"homepage": "https://ebruyardim.github.io/ebru-ince/"
 on:
   push:
     branches:
