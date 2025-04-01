@@ -67,7 +67,7 @@ export default function About() {
           <div className="flex justify-center">
             <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary/20">
               <img
-                src="./public/profil.jpeg"
+                src="profil.jpeg"
                 alt="Profile"
                 className="object-cover w-full h-full"
               />
