@@ -117,13 +117,13 @@ export default function Navbar() {
               >
                 About Me
               </a>
-              <a
+              {/* <a
                 href="#projects"
                 onClick={(e) => handleScroll(e, "projects")}
                 className="text-lg font-medium hover:text-primary transition-colors"
               >
                 Projects
-              </a>
+              </a> */}
               <a
                 href="#contact"
                 onClick={(e) => handleScroll(e, "contact")}
